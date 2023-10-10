@@ -1,5 +1,5 @@
+using ContosoPizza.Data;
 using ContosoPizza.Services;
-// Additional using declarations
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +8,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add the PizzaContext
+// Rsgiters the PizzaContext with ASP.NET Core dependency Injection system
+// Specifics that PizzaContext will use the SQLite db provider
+// Definesa SQLite connection string that points to a local file called ContosoPizza.db
+// **for something local, ok to hard code the connection string, but for Netowrk DBs like
+// SQL Server and PostgreSQL, store the connection string securely
+// For local dbs, can use Secret Manager
+builder.Services.AddSqlite<PizzaContext>("Data Source=ContosoPizza.db");
 
 // Add the PromotionsContext
 
