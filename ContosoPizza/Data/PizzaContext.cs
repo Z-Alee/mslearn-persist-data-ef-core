@@ -14,12 +14,14 @@ public class PizzaContext : DbContext
         {
 
         }
-    // These DbSet<T> properties correspond to tables to creat in the db
-    // Table names will match the DbSet<T> proper names 
-    // in the PizzaContext class. Can override behaviour as needed.
-    // When instantiated, this PizzaContext class will expose these DbSets,
-    // Pizzas, etc., properties. changes made to these collections will 
-    // propgate to the database
+    /* 
+        These DbSet<T> properties correspond to tables to create 
+        in the db
+        Table names will match the DbSet<T> proper names 
+        in the PizzaContext class. Can override behaviour as needed.
+        When instantiated, this PizzaContext class will expose these DbSets,
+        Pizzas, etc., properties. changes made to these collections will 
+    propgate to the database */
     public DbSet<Pizza> Pizzas => Set<Pizza>();
     public DbSet<Topping> Toppings => Set<Topping>();
     public DbSet<Sauce> Sauces => Set<Sauce>();
