@@ -17,6 +17,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSqlite<PizzaContext>("Data Source=ContosoPizza.db");
 
 // Add the PromotionsContext
+// This code registers PromotionsContext with the dependency injection system.
+builder.Services.AddSqlite<PromotionsContext>("Data Source=Promotions/Promotions.db");
 
 builder.Services.AddScoped<PizzaService>();
 
